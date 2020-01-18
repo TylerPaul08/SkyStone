@@ -149,7 +149,11 @@ public class VuforiaBlue extends LinearOpMode {
     private DcMotor MotorLift;
     private DcMotor extender;
 
-    private Servo SkystoneGrabber;
+    private Servo capstone;
+
+    private Servo SkystoneGrabberBlue;
+    private Servo SkystoneGrabberRed;
+
 
 
 
@@ -181,7 +185,12 @@ public class VuforiaBlue extends LinearOpMode {
         backright = hardwareMap.dcMotor.get("Backright");
         MotorLift = hardwareMap.dcMotor.get("motorLift");
         extender = hardwareMap.dcMotor.get("Extender");
-         SkystoneGrabber = hardwareMap.servo.get("SkystoneGrabber");
+
+        capstone = hardwareMap.servo.get( "Capstone");
+
+        SkystoneGrabberBlue = hardwareMap.servo.get("SkystoneGrabberBlue");
+        SkystoneGrabberRed = hardwareMap.servo.get("SkystoneGrabberRed");
+
 
         backleft.setDirection(DcMotor.Direction.REVERSE);
         frontleft.setDirection(DcMotor.Direction.REVERSE);
@@ -210,7 +219,10 @@ public class VuforiaBlue extends LinearOpMode {
         backright.setPower(0);
         backleft.setPower(0);
 
-        SkystoneGrabber.setPosition(0.4);
+        SkystoneGrabberBlue.setPosition(0.4);
+        SkystoneGrabberRed.setPosition(0.9);
+        capstone.setPosition(1);
+;
 
         /*
          * Retrieve the camera we are to use.
@@ -465,7 +477,7 @@ public class VuforiaBlue extends LinearOpMode {
 
                 telemetry.addData("lining up", "Begun");
                 telemetry.update();
-                moveToPosition(-11,0.5,4);
+                moveToPosition(-11,0.8,4);
                 strafeToPosition(-18,0.6,4);
 
 
@@ -507,7 +519,7 @@ public class VuforiaBlue extends LinearOpMode {
 
                 telemetry.addData("Skystone Not Found", "moving backward still");
 
-                moveToPosition(4,0.3, 3);
+                moveToPosition(4,0.7, 3);
                 telemetry.update();
 
             }
@@ -522,7 +534,7 @@ public class VuforiaBlue extends LinearOpMode {
         SkyStoneUnGrab();
         sleep(1000);
         encoderDrive(.7, 76 +frontLeftInchesMoved, 76 - frontRightInchesMoved, 76 - backLeftInchesMoved, 76 + backRightInchesMoved, 10);
-        strafeToPosition(-20,0.5,3);
+        strafeToPosition(-20,0.7,3);
         moveToPosition(-2,0.6,1.5);
         SkyStoneGrab();
         sleep(1200);
@@ -984,10 +996,10 @@ public class VuforiaBlue extends LinearOpMode {
         return;
     }
     public void SkyStoneGrab(){
-        SkystoneGrabber.setPosition(1);
+        SkystoneGrabberBlue.setPosition(1);
     }
     public void SkyStoneUnGrab(){
-        SkystoneGrabber.setPosition(0.4);
+        SkystoneGrabberBlue.setPosition(0.4);
     }
 }
 

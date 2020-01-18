@@ -22,6 +22,9 @@ public class Drive_TeleOp extends LinearOpMode
 
     private Servo wideGrabber;
     private Servo capstone;
+    private Servo SkystoneGrabberBlue;
+    private Servo SkystoneGrabberRed;
+
 
     public void coustomInit() {
 
@@ -53,14 +56,16 @@ public class Drive_TeleOp extends LinearOpMode
         motorLift = hardwareMap.get(DcMotor.class, "motorLift");
         Extender = hardwareMap.get(DcMotor.class, "Extender");
         plateMover = hardwareMap.get(DcMotor.class, "Plate Mover");
-
-
+        SkystoneGrabberBlue = hardwareMap.servo.get("SkystoneGrabberBlue");
+        SkystoneGrabberRed = hardwareMap.servo.get("SkystoneGrabberRed");
+        capstone = hardwareMap.servo.get("Captone");
         wideGrabber = hardwareMap.get(Servo.class, "wideGrab");
-        capstone = hardwareMap.get(Servo.class, "Capstone");
 
 
         wideGrabber.setPosition(1);
         capstone.setPosition(1);
+        SkystoneGrabberBlue.setPosition(0.4);
+        SkystoneGrabberRed.setPosition(0.9);                                    
 
         // Since one motor is reversed in relation to the other, we must reverse the motor on the right so positive powers mean forward.
         motorDriveLeftBack.setDirection(DcMotor.Direction.FORWARD);

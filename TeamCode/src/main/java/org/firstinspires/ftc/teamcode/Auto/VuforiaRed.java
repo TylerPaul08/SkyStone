@@ -476,7 +476,7 @@ public class VuforiaRed extends LinearOpMode {
                 telemetry.addData("Lower Grabber", "Complete");
                 telemetry.addData("strafe to move block out", "Begun");
                 telemetry.update();
-                strafeToPosition(22,0.7,5);
+                strafeToPosition(22,0.9,5);
                 telemetry.addData("strafe to move block out", "Complete");
 
                 break;
@@ -505,7 +505,7 @@ public class VuforiaRed extends LinearOpMode {
 
                 telemetry.addData("Skystone Not Found", "moving backward still");
 
-                moveToPosition(-4,0.3, 3);
+                moveToPosition(-4,0.5, 3);
                 telemetry.update();
 
             }
@@ -516,11 +516,11 @@ public class VuforiaRed extends LinearOpMode {
         double backLeftInchesMoved = (backLeftFinalEncoders-backLeftInitialEncoders)/cpi;
 
 //        moveToPosition(-60,0.8, 9);
-        encoderDrive(.6, 60 -frontLeftInchesMoved, -60 -frontRightInchesMoved, 60 + backLeftInchesMoved, 60 -backRightInchesMoved, 10);
+        encoderDrive(.8, 60 -frontLeftInchesMoved, -60 -frontRightInchesMoved, 60 + backLeftInchesMoved, 60 -backRightInchesMoved, 10);
         SkyStoneUnGrab();
         sleep(1000);
-        encoderDrive(.6, -75 +frontLeftInchesMoved, -75 - frontRightInchesMoved, -75 - backLeftInchesMoved, -75 + backRightInchesMoved, 10);
-        strafeToPosition(-25,0.5,3);
+        encoderDrive(.8, -75 +frontLeftInchesMoved, -75 - frontRightInchesMoved, -75 - backLeftInchesMoved, -75 + backRightInchesMoved, 10);
+        strafeToPosition(-25,0.8,3);
         moveToPosition(3,0.6,1.5);
         SkyStoneGrab();
         sleep(1200);
