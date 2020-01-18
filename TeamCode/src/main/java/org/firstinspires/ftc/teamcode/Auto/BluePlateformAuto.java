@@ -2,11 +2,13 @@ package org.firstinspires.ftc.teamcode.Auto;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
+import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
@@ -15,7 +17,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
 @Autonomous(name="BluePlateformAuto", group="chad")
 public class BluePlateformAuto extends LinearOpMode
+
 {
+    HardwarePushbot robot   = new HardwarePushbot();   // Use a Pushbot's hardware
+    ModernRoboticsI2cGyro gyro    = null;                    // Additional Gyro device
     //
     DcMotor frontleft;
     DcMotor frontright;
