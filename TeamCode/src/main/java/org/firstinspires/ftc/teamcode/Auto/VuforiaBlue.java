@@ -484,7 +484,7 @@ public class VuforiaBlue extends LinearOpMode {
                 telemetry.addData("lining up", "Complete");
                 telemetry.addData("lower grabber", "Begun");
                 telemetry.update();
-                SkyStoneGrab();
+                SkyStoneGrabBlue();
                 sleep(1000);
                 strafeToPosition(1,0.9,500);
                 telemetry.addData("Lower Grabber", "Complete");
@@ -531,17 +531,17 @@ public class VuforiaBlue extends LinearOpMode {
 
 //        moveToPosition(-60,0.8, 9);
         encoderDrive(.9, -52 -frontLeftInchesMoved, -52 -frontRightInchesMoved, -52 + backLeftInchesMoved, -52 -backRightInchesMoved, 10);
-        SkyStoneUnGrab();
+        SkyStoneUnGrabBlue();
         sleep(1000);
         encoderDrive(.9, 78 +frontLeftInchesMoved, 78 - frontRightInchesMoved, 78 - backLeftInchesMoved, 78 + backRightInchesMoved, 10);
         strafeToPosition(-24,0.7,3);
         moveToPosition(-4,0.6,1.5);
-        SkyStoneGrab();
+        SkyStoneGrabBlue();
         sleep(1000);
         strafeToPosition(1,0.9,500);
         strafeToPosition(14,0.7,2);
         moveToPosition(-89,0.9,5);
-        SkyStoneUnGrab();
+        SkyStoneUnGrabBlue();
         sleep(1000);
 
         strafeToPosition(-6,0.8,1);
@@ -999,11 +999,16 @@ public class VuforiaBlue extends LinearOpMode {
         backleft.setPower(0);
         return;
     }
-    public void SkyStoneGrab(){
+    public void SkyStoneGrabBlue(){
         SkystoneGrabberBlue.setPosition(1);
     }
-    public void SkyStoneUnGrab(){
+    public void SkyStoneUnGrabBlue(){
         SkystoneGrabberBlue.setPosition(0);
     }
+    public void SkyStoneGrabRed(){
+        SkystoneGrabberBlue.setPosition(1);
+    }
+    public void SkyStoneUnGrabRed(){ SkystoneGrabberBlue.setPosition(0); }
+
 }
 
