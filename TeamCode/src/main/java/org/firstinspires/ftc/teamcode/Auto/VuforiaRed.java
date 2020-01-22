@@ -173,6 +173,7 @@ public class VuforiaRed extends LinearOpMode {
 
 
 
+
     @Override public void runOpMode() {
 
         frontleft = hardwareMap.dcMotor.get("Frontleft");
@@ -213,6 +214,8 @@ public class VuforiaRed extends LinearOpMode {
         backleft.setPower(0);
 
 
+        SkystoneGrabberRed.setPosition(0);
+        SkystoneGrabberBlue.setPosition(0);
         /*
          * Retrieve the camera we are to use.
          */
@@ -467,7 +470,7 @@ public class VuforiaRed extends LinearOpMode {
                 telemetry.addData("lining up", "Begun");
                 telemetry.update();
                 moveToPosition(9,0.5,4);
-                strafeToPosition(-11,0.6,4);
+                strafeToPosition(-13,0.6,4);
 
 
                 telemetry.addData("lining up", "Complete");
@@ -518,22 +521,22 @@ public class VuforiaRed extends LinearOpMode {
         double backLeftInchesMoved = (backLeftFinalEncoders-backLeftInitialEncoders)/cpi;
 
 //        moveToPosition(-60,0.8, 9);
-        encoderDrive(.9, 52 -frontLeftInchesMoved, 52 -frontRightInchesMoved,  52 + backLeftInchesMoved, 52 -backRightInchesMoved, 10);
+        encoderDrive(.9, 54 -frontLeftInchesMoved, 54 -frontRightInchesMoved,  54 + backLeftInchesMoved, 54 -backRightInchesMoved, 10);
         SkyStoneUnGrabRed();
         sleep(1000);
-        encoderDrive(.9, -78 +frontLeftInchesMoved, -78 - frontRightInchesMoved, -78 - backLeftInchesMoved, -78 + backRightInchesMoved, 10);
-        strafeToPosition(-25,0.8,3);
-        moveToPosition(1,0.6,1.5);
+        encoderDrive(.9, -80 +frontLeftInchesMoved, -80 - frontRightInchesMoved, -80 - backLeftInchesMoved, -80 + backRightInchesMoved, 10);
+        strafeToPosition(-26,0.8,3);
+        moveToPosition(0,0.6,1.5);
         SkyStoneGrabRed();
         sleep(1000);
         strafeToPosition(1,0.9,500);
         strafeToPosition(14,0.7,2);
-        moveToPosition(89,0.9,5);
+        moveToPosition(92,0.9,5);
         SkyStoneUnGrabRed();
         sleep(1000);
 
         strafeToPosition(-6,0.8,1);
-        moveToPosition(-24,0.9,2);
+        moveToPosition(-21,0.9,2);
         strafeToPosition(-10,0.8,1);
 
 

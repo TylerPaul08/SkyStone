@@ -485,7 +485,7 @@ public class VuforiaBlue extends LinearOpMode {
                 telemetry.addData("lower grabber", "Begun");
                 telemetry.update();
                 SkyStoneGrabBlue();
-                sleep(1000);
+                sleep(1200);
                 strafeToPosition(1,0.9,500);
                 telemetry.addData("Lower Grabber", "Complete");
                 telemetry.addData("strafe to move block out", "Begun");

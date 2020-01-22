@@ -22,9 +22,10 @@ public class Drive_TeleOp extends LinearOpMode
 
     private Servo wideGrabber;
     private Servo capstone;
+
+
     private Servo SkystoneGrabberBlue;
     private Servo SkystoneGrabberRed;
-
 
     public void coustomInit() {
 
@@ -56,10 +57,13 @@ public class Drive_TeleOp extends LinearOpMode
         motorLift = hardwareMap.get(DcMotor.class, "motorLift");
         Extender = hardwareMap.get(DcMotor.class, "Extender");
         plateMover = hardwareMap.get(DcMotor.class, "Plate Mover");
+
+
+        wideGrabber = hardwareMap.get(Servo.class, "wideGrab");
+        capstone = hardwareMap.get(Servo.class, "Capstone");
+
         SkystoneGrabberBlue = hardwareMap.servo.get("SkystoneGrabberBlue");
         SkystoneGrabberRed = hardwareMap.servo.get("SkystoneGrabberRed");
-        capstone = hardwareMap.servo.get("Capstone");
-        wideGrabber = hardwareMap.get(Servo.class, "wideGrab");
 
 
         wideGrabber.setPosition(1);
