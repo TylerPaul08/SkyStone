@@ -134,14 +134,14 @@ public class Drive_TeleOp extends LinearOpMode
             //Lift Code
             if (gamepad2.left_stick_y > 0.1)
             {
-                motorLift.setPower(0.4);
+                motorLift.setPower(0.9);
             } else
             {
                 motorLift.setPower(gamepad2.left_stick_y);
             }
 
             //extender code
-            Extender.setPower(gamepad2.right_stick_x);
+            Extender.setPower(-gamepad2.right_stick_x);
 
 
             //wide grabber
