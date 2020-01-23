@@ -67,7 +67,7 @@ public class Drive_TeleOp extends LinearOpMode
 
 
         wideGrabber.setPosition(1);
-        capstone.setPosition(1);
+        capstone.setPosition(0.9);
         SkystoneGrabberBlue.setPosition(0.4);
         SkystoneGrabberRed.setPosition(0.4);
 
