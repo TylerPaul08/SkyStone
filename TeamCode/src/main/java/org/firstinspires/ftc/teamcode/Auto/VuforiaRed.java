@@ -521,7 +521,8 @@ public class VuforiaRed extends LinearOpMode {
         double backLeftInchesMoved = (backLeftFinalEncoders-backLeftInitialEncoders)/cpi;
 
 //        moveToPosition(-60,0.8, 9);
-        encoderDrive(.9, 54 -frontLeftInchesMoved, 54 -frontRightInchesMoved,  54 + backLeftInchesMoved, 54 -backRightInchesMoved, 10);
+        moveToPosition(54 + frontLeftInchesMoved - frontRightInchesMoved,1,4);
+//        encoderDrive(.9, 54 -frontLeftInchesMoved, 54 -frontRightInchesMoved,  54 + backLeftInchesMoved, 54 -backRightInchesMoved, 10);
         SkyStoneUnGrabRed();
         sleep(1000);
         encoderDrive(.9, -80 +frontLeftInchesMoved, -80 - frontRightInchesMoved, -80 - backLeftInchesMoved, -80 + backRightInchesMoved, 10);
