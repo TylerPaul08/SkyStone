@@ -2,13 +2,11 @@ package org.firstinspires.ftc.teamcode.Auto;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
@@ -17,10 +15,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
 @Autonomous(name="BluePlateformAuto", group="chad")
 public class BluePlateformAuto extends LinearOpMode
-
 {
-    HardwarePushbot robot   = new HardwarePushbot();   // Use a Pushbot's hardware
-    ModernRoboticsI2cGyro gyro    = null;                    // Additional Gyro device
     //
     DcMotor frontleft;
     DcMotor frontright;
@@ -75,7 +70,7 @@ public class BluePlateformAuto extends LinearOpMode
         telemetry.addData("Go Time","letting motor move");
 
         //Drives backwards
-        moveToPosition(-35,0.9);
+        moveToPosition(-25,0.9);
 
         //Turns right
         TurningRightWithEncoders(-48,0.5);
@@ -92,9 +87,11 @@ public class BluePlateformAuto extends LinearOpMode
         telemetry.addData("Go Time","letting it go");
 
         //Drives backwards
-        moveToPosition(-43.0, 0.9);
+        moveToPosition(-50.0, 0.9);
         telemetry.addData("Go Time","moving to line");
-        //
+
+        //Strafes to the left
+        strafeToPosition(-25, 0.7);
 
 	//
     }

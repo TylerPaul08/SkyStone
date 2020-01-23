@@ -76,7 +76,7 @@ public class RedPlateformAuto extends LinearOpMode
         TurningRightWithEncoders(46,0.6);
 
         //Drives forward
-        moveToPosition(8, 0.6);
+        moveToPosition(14.1, 0.6);
 
         //Ungrabs the foundation
         PlateUnGrabber();
@@ -89,6 +89,9 @@ public class RedPlateformAuto extends LinearOpMode
         //Drives backwards
         moveToPosition(-48,0.9);
         telemetry.addData("Go Time","moving to line");
+
+        //Strafes to the left
+        strafeToPosition(28, 0.7);
 
     }
     //
