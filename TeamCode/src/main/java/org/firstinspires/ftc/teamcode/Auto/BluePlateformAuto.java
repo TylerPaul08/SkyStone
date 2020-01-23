@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
@@ -27,6 +28,9 @@ public class BluePlateformAuto extends LinearOpMode
     DcMotor backleft;
     DcMotor backright;
     DcMotor plateMover;
+
+    private Servo SkystoneGrabberBlue;
+    private Servo SkystoneGrabberRed;
     //28 * 20 / (2ppi * 4.125)
     Double width = 18.0; //inches
     Integer cpr = 28; //counts per rotation
@@ -53,9 +57,14 @@ public class BluePlateformAuto extends LinearOpMode
         backright = hardwareMap.dcMotor.get("Backright");
         plateMover = hardwareMap.dcMotor.get("Plate Mover");
 
+        SkystoneGrabberBlue = hardwareMap.servo.get("SkystoneGrabberBlue");
+        SkystoneGrabberRed = hardwareMap.servo.get("SkystoneGrabberRed");
+
         frontright.setDirection(DcMotorSimple.Direction.REVERSE);
         backright.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        SkystoneGrabberBlue.setPosition(0.4);
+        SkystoneGrabberRed.setPosition(0.4);
 
         waitForStartify();
 
